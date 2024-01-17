@@ -14,7 +14,7 @@ func main() {
 		log.Println(err)
 		return
 	}
-	db, _ := sql.Open("sqlite3", "../build/app.db")
+	db, _ := sql.Open("sqlite3", "./build/app.db")
 	_, err = db.Exec(string(script_design))
 	if err != nil {
 		log.Fatalln(err)

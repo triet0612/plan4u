@@ -1,6 +1,7 @@
 migrate:
-	rm ../build/*.db || true
+	rm ./build/* || true
 	go run ./cmd/migrate/migrate.go
+	cp -r ./view/ ./build/
 build_app:
 	go build -o ./build/ ./cmd/server/main.go
 run:

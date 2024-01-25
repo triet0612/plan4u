@@ -30,7 +30,9 @@ func runServer(db *sql.DB, cfg *config.Config) {
 	e := echo.New()
 	e.Renderer = service.InitTmplMan()
 
-	// e.Use(middleware.Logger())
+	e.Use(middleware.LoggerWithConfig(middleware.LoggerConfig{
+		Format: "method=${method}, uri=${uri}, status=${status}\n",
+	}))
 	e.Use(middleware.Recover())
 
 	e.Static("assets", "./view/assets")

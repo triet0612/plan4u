@@ -1,0 +1,30 @@
+<div class="border w-full h-full flex flex-col">
+  <h2 class="px-4 py-2 font-bold text-3xl border">Task detail</h2>
+  <form class="flex flex-col gap-4 p-4 w-full text-xl">
+    <div class="flex justify-between w-full">
+      <label for="title">Title</label>
+      <input class="bg-[#1f2937] border w-3/5" type="text" placeholder="Title">
+    </div>
+    <div class="flex justify-between w-full">
+      <label for="Status">Status</label>
+      <select name="status" class="bg-[#1f2937] border w-3/5">
+        <option value="Todo">Todo</option>
+        <option value="In progress">In progress</option>
+        <option value="Done">Done</option>
+        <option value="Deploy">Deploy</option>
+      </select>
+    </div>
+    <div class="flex justify-between w-full">
+      <label for="deail">Detail</label>
+      <textarea name="" id="" class="w-3/5 h-[100px]"></textarea>
+    </div>
+    <div class="flex justify-between w-full">
+      <label for="deadline">Deadline</label>
+      <input type="date" class="bg-[#1f2937] w-3/5 border">
+    </div>
+    <div class="flex w-full place-self-end pt-44 gap-4">
+      <button class="flex-1 bg-red-900">Delete</button>
+      <button class="flex-1 bg-green-600">Save</button>
+    </div>
+  </form>
+</div>

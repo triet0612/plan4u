@@ -14,13 +14,12 @@ type AppHandler struct {
 
 func (a *AppHandler) Mount(e *echo.Echo) {
 	e.GET("/", a.Home)
+	e.GET("/kanban", a.Kanban)
+	e.GET("/kanban/detail", a.KanbanDetail)
+	e.GET("/kanban/create", a.KanbanCreateForm)
+	e.POST("/kanban/create", a.KanbanCreate)
 }
 
 func (a *AppHandler) Home(c echo.Context) error {
 	return c.Render(200, "index.html", nil)
-}
-
-func (a *AppHandler) Kanban(c echo.Context) error {
-	// rows, err := a.Db.Query("SELECT colname, color, note, col_limit FROM kanban_column;")
-	return nil
 }

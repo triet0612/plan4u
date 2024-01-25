@@ -1,0 +1,30 @@
+<div class="border w-full h-full flex flex-col">
+  <h2 class="px-4 py-2 font-bold text-3xl border">Task create</h2>
+  <form class="flex flex-col h-full p-4 w-full text-xl" hx-post="/kanban/create">
+    <div class="h-[90%] flex flex-col gap-4">
+      <div class="flex justify-between w-full">
+        <label for="title">Title</label>
+        <input name="Title" class="bg-[#2b2a33] border w-3/5" type="text" placeholder="Title">
+      </div>
+      <div class="flex justify-between w-full">
+        <label for="Status">Status</label>
+        <select name="ItemStatus" class="bg-[#2b2a33] border w-3/5">
+        {{range .}}
+          <option value="{{.}}">{{.}}</option>
+        {{end}}
+        </select>
+      </div>
+      <div class="flex justify-between w-full">
+        <label for="deail">Detail</label>
+        <textarea name="Detail" class="w-3/5 h-[70px] border bg-[#2b2a33] resize-none" placeholder="details" ></textarea>
+      </div>
+      <div class="flex justify-between w-full">
+        <label for="deadline">Deadline</label>
+        <input name="Deadline" type="date" class="bg-[#2b2a33] w-3/5 border">
+      </div>
+    </div>
+    <div class="flex w-full h-[10%] place-self-end">
+      <button class="flex-1 bg-green-600">Create</button>
+    </div>
+  </form>
+</div>

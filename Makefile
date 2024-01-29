@@ -7,4 +7,4 @@ build_app:
 run:
 	make build_app && cd ./build && ./main
 debug:
-	make build_app && cd ./build && PORT=8000 ./main
+	make migrate && make build_app && cd ./build && PORT=8000 ./main
